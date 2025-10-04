@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/Car_Driving.svg'
-import './App.css'
+import './style.css'
 import Layout from "./components/Layout";
 import TripForm from "./components/TripForm";
 import RouteInfo from "./components/RouteInfo";
@@ -9,27 +9,32 @@ import LogsDisplay from "./components/LogsDisplay";
 
 function App() {
   const [result, setResult] = useState(null);
-   return (
-    <Layout>
-      <TripForm onResult={setResult} />
-      {result && (
+  const [activeTab, setActiveTab] = useState("planner"); // "planner" or "logs"
+
+  return (
+    <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
+      {activeTab === "planner" && (
         <>
-          <RouteInfo route={result.route} />
-          <MapView geometry={result.route.geometry} />
-          <LogsDisplay logs={result.logs} />
+          <TripForm onResult={setResult} />
+          {result && (
+            <>
+              <RouteInfo route={result.route} />
+              <MapView geometry={result.route.geometry} />
+            </>
+          )}
         </>
       )}
+
+      {activeTab === "logs" && result && (
+        <LogsDisplay logs={result.logs} />
+      )}
+      {activeTab === "map" && result && (
+        <MapView geometry={result.route.geometry} />
+      )}
+
     </Layout>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
 
