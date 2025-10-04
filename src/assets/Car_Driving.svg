@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+    <title>Car Driving Log Logo</title>
+
+    <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="6"/>
+
+    <circle cx="50" cy="50" r="10" fill="#1f2937"/>
+
+    <path d="M 50 10 L 50 40 M 50 60 L 50 90" stroke="#1f2937" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 50 50 L 25 80" stroke="#1f2937" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 50 50 L 75 80" stroke="#1f2937" stroke-width="6" stroke-linecap="round"/>
+
+    <path d="M 50 50 m -7 0 a 7 7 0 1 0 14 0 a 7 7 0 1 0 -14 0" fill="#38bdf8"/> <path d="M 50 57 L 50 75" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/> </svg>
